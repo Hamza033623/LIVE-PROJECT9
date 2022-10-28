@@ -11,7 +11,7 @@ jobs:
           command: 'sudo npm install -g npm@latest'
       - run:
           name: |
-          command: 'alias npm='npm --no-fund'
+          command: alias npm='npm --no-fund'
       - run:
           name: |
           command: npm config set legacy-peer-deps true
