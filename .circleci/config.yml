@@ -11,6 +11,9 @@ jobs:
           command: 'sudo npm install -g npm@latest'
       - run:
           name: |
+          command: 'npm install --silent'
+      - run:
+          name: |
           command: npm config set legacy-peer-deps true
       - run:
           name: submodules
