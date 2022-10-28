@@ -1,14 +1,23 @@
 version: 2
-version: 2
+
 jobs:
   build:
     docker:
-      - image: circleci/node:6.10.1
+      - image: circleci/node:16.4.1
     steps:
       - checkout
       - run:
+          name: update-npm
+          command: 'sudo npm install -g npm@latest'
+      - run:
+          name: |
+          command: npm config set legacy-peer-deps true
+      - run:
           name: submodules
           command: 'git submodule update --init'
+      - run:
+          name: install yarn
+          command: 'yarn add node-sass'
       - run:
           name: install
           command: |
