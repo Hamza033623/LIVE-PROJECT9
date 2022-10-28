@@ -14,6 +14,9 @@ jobs:
           command: alias npm='npm --no-fund'
       - run:
           name: |
+          command: 'npm set audit false'
+      - run:
+          name: |
           command: npm config set legacy-peer-deps true
       - run:
           name: submodules
