@@ -32,6 +32,9 @@ jobs:
           name: |
           command: npm rebuild node-sass
       - run:
+          name: |
+          command: npm install node-sass
+      - run:
           name: deploy
           command: |
             NODE_ENV=production ./node_modules/webpack/bin/webpack.js -p --config ./webpack.config.js && sudo apt-get install awscli && ls -la dist && ./deploy.sh
