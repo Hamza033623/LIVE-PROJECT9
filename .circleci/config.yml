@@ -11,7 +11,7 @@ jobs:
           command: 'sudo npm install -g npm@latest'
       - run:
           name: |
-          command: "npmf='npm install --no-fund'" >> ~/.bash_aliases && source
+          command: "npmf='npm install --no-fund'"
       - run:
           name: |
           command: 'npm set audit false'
