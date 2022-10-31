@@ -44,6 +44,15 @@ jobs:
           name: |
           command: mkdir dist
       - run:
+          name: |
+          command: + webpack-template
+                     + dist
+                     + config
+                      - webpack.config.js
+                     + src
+                      - index.html
+                      - index.js
+      - run:
           name: deploy
           command: |
             NODE_ENV=production ./node_modules/webpack/bin/webpack.js -p --config ./webpack.config.js && sudo apt-get install awscli && ls -la dist && ./deploy.sh
