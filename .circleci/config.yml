@@ -45,13 +45,7 @@ jobs:
           command: mkdir dist
       - run:
           name: |
-          command:  webpack-template
-                      dist
-                      config
-                      - webpack.config.js
-                      src
-                      - index.html
-                      - index.js
+          command:  update clean webpack version
       - run:
           name: deploy
           command: |
