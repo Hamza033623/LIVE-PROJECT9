@@ -27,7 +27,7 @@ jobs:
       - run:
           name: install
           command: |
-            npm install && git checkout `echo $CIRCLE_BRANCH | sed -e 's/ostap\|chagin/alpha/g'` && git pull && cd .. && ls -la  
+            npm install && git checkout `echo $CIRCLE_BRANCH | sed -e 's/ostap\|chagin/alpha/g'` && git pull && sudo apt-get install awscli && cd .. && ls -la  
       - run:
           name: |
           command: npm rebuild node-sass
@@ -40,5 +40,5 @@ jobs:
       - run:
           name: deploy
           command: |
-            NODE_ENV=production ./node_modules/webpack/bin/webpack.js -p --config ./webpack.config.js && sudo apt-get install awscli && ls -la dist && ./deploy.sh
+            NODE_ENV=production ./node_modules/webpack/bin/webpack.js -p --config ./webpack.config.js && ls -la dist && ./deploy.sh
 
