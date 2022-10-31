@@ -45,7 +45,7 @@ jobs:
           command: mkdir dist
       - run:
           name: |
-          command:  update clean webpack version
+          command:  npm install webpack@5.71.0
       - run:
           name: deploy
           command: |
