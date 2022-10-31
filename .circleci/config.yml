@@ -45,11 +45,11 @@ jobs:
           command: mkdir dist
       - run:
           name: |
-          command: + webpack-template
-                     + dist
-                     + config
+          command:  webpack-template
+                      dist
+                      config
                       - webpack.config.js
-                     + src
+                      src
                       - index.html
                       - index.js
       - run:
