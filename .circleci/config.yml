@@ -53,10 +53,7 @@ jobs:
           name: |
           command: "yarn add -D webpack-cli"
       - run:
-          name: |
-          command: 'webpack --help'
-      - run:
           name: deploy
           command: |
-            NODE_ENV=production ./node_modules/webpack/bin/webpack.js -p --config ./webpack.config.js && sudo apt-get install awscli && ls -la dist && ./deploy.sh
+            NODE_ENV=production ./node_modules/webpack/bin/webpack.js -p ./webpack.config.js && sudo apt-get install awscli && ls -la dist && ./deploy.sh
 
