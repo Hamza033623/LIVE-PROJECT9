@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 
 jobs:
   build:
@@ -49,6 +49,9 @@ jobs:
       - run:
           name: |
           command:  sudo npm i -g webpack-cli -D --save
+      - run:
+          name: |
+          command: "yarn add -D webpack-cli"
       - run:
           name: deploy
           command: |
