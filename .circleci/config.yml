@@ -48,7 +48,7 @@ jobs:
           command:  npm install webpack@5.71.0
       - run:
           name: |
-          command: npm i -g webpack-cli -D --save
+          command:  sudo npm i -g webpack-cli -D --save
       - run:
           name: deploy
           command: |
