@@ -5,6 +5,13 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
+module.exports = {
+    mode:'development', 
+    entry:{
+      app:'c:./node_modules/webpack/bin/webpack.js --profile
+      vendor: ['vue', 'axios']
+    },   
+
 const isAnalyze = process.env.NODE_ENV === 'analyze';
 const isProd = process.env.NODE_ENV === 'production';
 const isDev = process.env.NODE_ENV === 'development';
