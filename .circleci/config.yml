@@ -54,7 +54,7 @@ jobs:
           command: "yarn add -D webpack-cli"
       - run:
           name: |
-          command: "yarn update -D webpack-dev-server"
+          command: "yarn add -D webpack-dev-server"
       - run:
           name: deploy
           command: |
