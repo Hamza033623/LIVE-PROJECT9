@@ -1,5 +1,6 @@
 version: 2
-
+let webpack = require('webpack');
+let path = require('path');
 jobs:
   build:
     docker:
