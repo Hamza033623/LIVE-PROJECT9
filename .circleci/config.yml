@@ -48,9 +48,6 @@ jobs:
           command:  npm install webpack@5.71.0
       - run:
           name: |
-          command:  sudo npm i -g webpack-cli -D --save
-      - run:
-          name: |
           command: "yarn add -D webpack-cli"
       - run:
           name: |
