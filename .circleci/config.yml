@@ -45,9 +45,6 @@ jobs:
           command: mkdir dist
       - run:
           name: |
-          command:  npm install webpack@5.71.0
-      - run:
-          name: |
           command: "yarn add -D webpack-dev-server"
      
       - run:
