@@ -45,10 +45,6 @@ jobs:
           command: mkdir dist
       - run:
           name: |
-          command: "yarn add -D webpack-dev-server"
-     
-      - run:
-          name: |
           command: "yarn add -D webpack-cli"
       - run:
           name: deploy
