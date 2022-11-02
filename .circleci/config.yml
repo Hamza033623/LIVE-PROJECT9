@@ -95,6 +95,7 @@ jobs:
       - test
         requires:
           -build
-           -test
+          -test
+          
            
     
