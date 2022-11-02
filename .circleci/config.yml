@@ -93,7 +93,7 @@ jobs:
      jobs:
       - build
       - test
-        requires:
+        requires
           - build
           - test
   
