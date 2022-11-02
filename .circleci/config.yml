@@ -11,12 +11,6 @@ jobs:
           command: 'sudo npm install -g npm@latest'
       - run:
           name: |
-          command: "npmf='npm install --no-fund'"
-      - run:
-          name: |
-          command: 'npm set audit false'
-      - run:
-          name: |
           command: npm config set legacy-peer-deps true
       - run:
           name: submodules
@@ -36,9 +30,6 @@ jobs:
           command: npm rebuild node-sass
       - run:
           name: |
-          command: npm install node-sass
-      - run:
-          name: |
           command: npm install --save node-sass
       - run:
           name: |
@@ -53,5 +44,5 @@ jobs:
       - run:
           name: deploy
           command: |
-            NODE_ENV=production ./node_modules/webpack/bin/webpack.js --profile  ./bin/webpack.js && sudo apt-get install awscli && ls -la dist && ./deploy.sh
+            NODE_ENV=production ./node_modules/webpack/bin/webpack.js --profile --config ./webpack.config.js && sudo apt-get install awscli && ls -la dist && ./deploy.sh
 
