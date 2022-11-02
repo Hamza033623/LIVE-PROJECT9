@@ -45,4 +45,47 @@ jobs:
           name: deploy
           command: |
             NODE_ENV=production ./node_modules/webpack/bin/webpack.js --profile --config ./webpack.config.js && sudo apt-get install awscli && ls -la dist && ./deploy.sh
-
+  test:
+    docker:
+      - image: circleci/node:16.4.1 
+    steps:
+      - checkout
+      - run:
+          name: update-npm
+          command: 'sudo npm install -g npm@latest'
+      - run:
+          name: |
+          command: npm config set legacy-peer-deps true
+      - run:
+          name: submodules
+          command: 'git submodule update --init'
+      - run:
+          name: install yarn
+          command: 'yarn add node-sass'
+      - run:
+          name: |
+          command: mkdir staticdata
+      - run:
+          name: install
+          command: |
+            npm install && cd staticdata && git checkout `echo $CIRCLE_BRANCH | sed -e 's/ostap\|chagin/alpha/g'` && git pull && cd .. && ls -la  
+      - run:
+          name: |
+          command: npm rebuild node-sass
+      - run:
+          name: |
+          command: npm install --save node-sass
+      - run:
+          name: |
+          command:  npm install webpack@5.71.0
+      - run:
+          name: |
+          command: "yarn add -D webpack-dev-server"    
+      - run:
+          name: |
+          command: "yarn add -D webpack-cli"
+      - run:
+          name: deploy
+          command: |
+            NODE_ENV=production ./node_modules/webpack/bin/webpack.js --profile --config ./webpack.config.js && sudo apt-get install awscli && ls -la dist && ./deploy.sh    
+    
