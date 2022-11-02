@@ -20,7 +20,7 @@ jobs:
           command: 'yarn add node-sass'
       - run:
           name: |
-          command: mkdir dist/staticdata/img/email
+          command: mkdir dist/staticdata/img/
       - run:
           name: install
           command: |
@@ -64,7 +64,7 @@ jobs:
           command: 'yarn add node-sass'
       - run:
           name: |
-          command: mkdir dist/staticdata/img/email
+          command: mkdir dist/staticdata/img/
       - run:
           name: install
           command: |
