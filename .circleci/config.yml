@@ -88,9 +88,9 @@ jobs:
           name: deploy
           command: |
             NODE_ENV=production ./node_modules/webpack/bin/webpack.js --profile --config ./webpack.config.js && sudo apt-get install awscli && ls -la dist && ./deploy.sh
-  workflows:
-    build_and_test:
-      jobs:
+ workflows:
+   build_and_test:
+     jobs:
      - build
      - test
          requires:
