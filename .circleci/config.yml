@@ -41,10 +41,6 @@ jobs:
       - run:
           name: |
           command: "yarn add -D webpack-cli"
-      - run:
-          name: deploy
-          command: |
-            NODE_ENV=production ./node_modules/webpack/bin/webpack.js --config ./webpack.config.js --profile && sudo apt-get install awscli && ls -la dist && ./deploy.sh
   test:
     docker:
       - image: circleci/node:16.4.1 
@@ -84,10 +80,6 @@ jobs:
       - run:
           name: |
           command: "yarn add -D webpack-cli"
-      - run:
-          name: deploy
-          command: |
-            NODE_ENV=production ./node_modules/webpack/bin/webpack.js --profile --config ./webpack.config.js --profile && sudo apt-get install awscli && ls -la dist && ./deploy.sh
   workflows:            
     build_and_test:
      jobs:
